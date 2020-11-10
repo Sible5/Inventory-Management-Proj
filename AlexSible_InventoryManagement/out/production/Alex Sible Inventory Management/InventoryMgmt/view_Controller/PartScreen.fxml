@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InventoryMgmt.view_Controller.PartController">
+    <children>
+        <Label layoutX="38.0" layoutY="43.0" text="Add Part">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <HBox layoutX="232.0" layoutY="43.0" prefHeight="27.0" prefWidth="304.0">
+            <children>
+                <RadioButton fx:id="addPartInHouseRadio" mnemonicParsing="false" onAction="#radioPicker" selected="true" text="In House">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="addPartInOutGroup" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="addPartOutsourcedRadio" mnemonicParsing="false" onAction="#radioPicker" text="Outsourced" toggleGroup="$addPartInOutGroup">
+                    <HBox.margin>
+                        <Insets left="50.0" />
+                    </HBox.margin>
+                </RadioButton>
+            </children>
+        </HBox>
+        <Label fx:id="addPartMinLabel" layoutX="374.0" layoutY="287.0" text="Min" />
+        <VBox layoutX="63.0" layoutY="118.0" prefHeight="200.0" prefWidth="100.0">
+            <children>
+                <Label fx:id="addPartIDLabel" text="ID">
+                    <VBox.margin>
+                        <Insets bottom="25.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="addPartNameLabel" text="Name">
+                    <VBox.margin>
+                        <Insets bottom="25.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="addPartInvLabel" text="Inv">
+                    <VBox.margin>
+                        <Insets bottom="25.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="addPartPriceCostLabel" text="Price/Cost">
+                    <VBox.margin>
+                        <Insets bottom="25.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="addPartMaxLabel" text="Max">
+                    <VBox.margin>
+                        <Insets bottom="25.0" />
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="addPartCompanyMachLabel" text="Machine ID" />
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </VBox>
+        <VBox layoutX="200.0" layoutY="118.0" prefHeight="237.0" prefWidth="116.0">
+            <children>
+                <TextField fx:id="addPartIDField" disable="true" promptText="Auto Gen">
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="addPartNameField" promptText="Part Name">
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="addPartInvField" layoutX="10.0" layoutY="50.0" promptText="Inventory">
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="addPartPriceField" layoutX="10.0" layoutY="90.0" promptText="Price/Cost">
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="addPartMaxField" layoutX="10.0" layoutY="115.0" promptText="Max">
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="addPartCompMachField" layoutX="10.0" layoutY="140.0" promptText="Machine ID">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <font>
+                        <Font name="System Italic" size="12.0" />
+                    </font>
+                </TextField>
+            </children>
+        </VBox>
+        <TextField fx:id="addPartMinField" layoutX="412.0" layoutY="283.0" prefHeight="25.0" prefWidth="116.0" promptText="Min">
+            <font>
+                <Font name="System Italic" size="12.0" />
+            </font>
+        </TextField>
+        <Button fx:id="addPartSaveBtn" layoutX="374.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActionPartSave" prefHeight="36.0" prefWidth="86.0" text="Save" />
+        <Button fx:id="addPartCancelBtn" layoutX="485.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActionPartCancel" prefHeight="36.0" prefWidth="86.0" text="Cancel" />
+    </children>
+</AnchorPane>
